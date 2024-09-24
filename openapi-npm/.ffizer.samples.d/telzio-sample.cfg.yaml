@@ -6,5 +6,6 @@ apply_args:
   - --variables
   - api_spec_url='https://api.telzio.com/swagger/v3/swagger.json'
 check_ignores:
+  - .DS_Store
   - openapi/spec.yaml
   - test/*.test.ts
