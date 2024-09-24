@@ -6,4 +6,4 @@ export { paths } from "./openapi/schema.js";
 //     apiKey?: string,
 // }
 
-export type {{to_pascal_case shorthand_name}}Client = ReturnType<typeof createClient<paths>>;
+export const {{to_pascal_case shorthand_name}}Client = createClient<paths>;

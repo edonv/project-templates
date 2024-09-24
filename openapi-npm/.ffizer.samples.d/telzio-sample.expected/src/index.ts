@@ -6,4 +6,4 @@ export { paths } from "./openapi/schema.js";
 //     apiKey?: string,
 // }
 
-export type TelzioClient = ReturnType<typeof createClient<paths>>;
+export const TelzioClient = createClient<paths>;
