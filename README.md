@@ -5,6 +5,10 @@ Misc templates for different types of projects. These templates use [ffizer](htt
 ## Usage
 
 ```shell
+% ffizer apply --source <TEMPLATE_PATH> --destination <DESTINATION_PATH>
+```
+
+```shell
 % ffizer apply --help
 
 Apply a template into a target directory
@@ -27,4 +31,5 @@ Options:
 
 ## Templates
 
+- Generic Node package
 - [NPM package for OpenAPI spec](./openapi-npm/)

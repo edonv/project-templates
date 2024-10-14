@@ -1,0 +1,12 @@
+variables:
+  - name: package_name
+    ask: What is capitalized NPM package name?
+  - name: shorthand_name
+    ask: What is the abbreviated name? (i.e. 'Telzio-TS' -> 'telzio')
+  - name: private
+    ask: Should the package be private?
+
+use_template_dir: true
+
+# scripts:
+#   - cmd: npm ci

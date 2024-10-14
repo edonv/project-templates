@@ -1,0 +1,33 @@
+{
+  "name": "{{to_kebab_case package_name}}",
+  "version": "0.0.0",
+  "type": "module",
+  "license": "MIT",
+  "description": "",
+  "repository": "github:edonv/{{to_kebab_case package_name}}",
+  "author": "edonv",
+  "private": {{private}},
+  "sponsor": {
+    "url": "https://github.com/sponsors/edonv"
+  },
+  "scripts": {
+    {{#if private}}
+    "publish": "rm -r ./dist ; npm run gen-build && npm publish",
+    {{/if}}
+    "build": "tsc --build tsconfig.build.json",
+    "test": "tsc && node dist/test/{{to_lower_case shorthand_name}}.test.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/README.md",
+    "/LICENSE.md",
+    "/dist/"
+  ],
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
