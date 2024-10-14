@@ -8,5 +8,5 @@ variables:
 
 use_template_dir: true
 
-# scripts:
-#   - cmd: npm ci
+scripts:
+  - cmd: npm install
