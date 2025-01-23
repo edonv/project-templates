@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "inputs": [
+        {
+            "id": "template",
+            "description": "Which template?",
+            "type": "pickString",
+            "options": [
+                {
+                    "label": "NPM TypeScript",
+                    "value": "${workspaceFolder}/node-ts/"
+                },
+                {
+                    "label": "OpenAPI NPM",
+                    "value": "${workspaceFolder}/openapi-npm/"
+                }
+            ]
+        },
+        {
+            "id": "destination",
+            "description": "Where should this template be generated?",
+            "type": "promptString"
+        }
+    ],
+    "tasks": [
+        {
+            "label": "Generate Project",
+            "command": "ffizer",
+            "args": [
+                "apply",
+                "--source",
+                "${input:template}",
+                "--destination",
+                "${input:destination}",
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
