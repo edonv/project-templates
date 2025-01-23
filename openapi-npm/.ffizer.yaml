@@ -4,11 +4,17 @@ variables:
   - name: shorthand_name
     ask: What is the abbreviated name? (i.e. 'Telzio-TS' -> 'telzio')
   - name: api_spec_url
-    ask: What is the URL of the API spec?
+    ask: What is the path/URL of the API spec?
 
 use_template_dir: true
 
 scripts:
   - cmd: |
-      mv openapi/spec.yaml openapi/{{file_name api_spec_url}}
+      if [[ "{{api_spec_url}}" == *"http"* ]]
+      then
+        wget -O 'openapi/{{file_name api_spec_url}}' '{{api_spec_url}}'
+      else
+        rsync -avzh '{{api_spec_url}}' openapi/
+      fi
+      # mv openapi/spec.yaml openapi/{{file_name api_spec_url}}
       mv test/test.test.ts test/{{shorthand_name}}.test.ts
