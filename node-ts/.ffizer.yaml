@@ -5,6 +5,9 @@ variables:
     ask: What is the abbreviated name? (i.e. 'Telzio-TS' -> 'telzio')
   - name: private
     ask: Should the package be private?
+    select_in_values:
+      - 'true'
+      - 'false'
 
 use_template_dir: true
 
