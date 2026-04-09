@@ -12,9 +12,9 @@
   },
   "scripts": {
     {{#if private}}
-    "publish": "rm -r ./dist ; npm run gen-build && npm publish",
+    "prepublishOnly": "npm run build",
     {{/if}}
-    "build": "tsc --build tsconfig.build.json",
+    "build": "rm -r ./dist ; tsc --build tsconfig.build.json",
     "test": "tsc && node dist/test/{{to_lower_case shorthand_name}}.test.js"
   },
   "main": "dist/index.js",

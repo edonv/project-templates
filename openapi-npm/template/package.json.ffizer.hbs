@@ -13,8 +13,8 @@
     "build": "tsc --build tsconfig.build.json",
     "test": "tsc && node dist/test/{{to_lower_case shorthand_name}}.test.js",
     "api-gen": "openapi-typescript",
-    "gen-build": "npm run api-gen && npm run build",
-    "publish": "rm -r ./dist ; npm run gen-build && npm publish"
+    "gen-build": "rm -r ./dist ; npm run api-gen && npm run build",
+    "prepublishOnly": "npm run gen-build"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
