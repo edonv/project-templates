@@ -4,7 +4,10 @@
   "type": "module",
   "license": "MIT",
   "description": "",
-  "repository": "github:edonv/telzio-ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edonv/telzio-ts.git"
+  },
   "author": "edonv",
   "sponsor": {
     "url": "https://github.com/sponsors/edonv"
